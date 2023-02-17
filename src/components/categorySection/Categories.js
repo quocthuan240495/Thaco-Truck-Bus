@@ -20,39 +20,19 @@ export default function Categories() {
 
   return (
     <div className="banner-section">
-      {/* <Container fluid>
-        <Row>
-          <Col lg="4">
-            <div className="single-banner">
-              <img src={require("../../images/banner-1.jpg")} alt="" />
-              <div className="inner-text">
-                <h4>Men’s</h4>
-              </div>
-            </div>
-          </Col>
-          <Col lg="4">
-            <div className="single-banner">
-              <img src={require("../../images/banner-2.jpg")} alt="" />
-              <div className="inner-text">
-                <h4>Women’s</h4>
-              </div>
-            </div>
-          </Col>
-          <Col lg="4">
-            <div className="single-banner">
-              <img src={require("../../images/banner-3.jpg")} alt="" />
-              <div className="inner-text">
-                <h4>Kid’s</h4>
-              </div>
-            </div>
-          </Col>
-        </Row>
-      </Container> */}
       <div className="mainContainer">
         <Slider {...settings}>
           <div className="container">
             <div className="single-banner">
-              <img src={require("../../images/banner-3.jpg")} alt="" />
+              <img src={require("../../images/banner-1.jpg")} alt="" />
+              <div className="inner-text">
+                <h4>Kid’s</h4>
+              </div>
+            </div>
+          </div>
+          <div className="container">
+            <div className="single-banner">
+              <img src={require("../../images/banner-2.jpg")} alt="" />
               <div className="inner-text">
                 <h4>Kid’s</h4>
               </div>
@@ -68,7 +48,7 @@ export default function Categories() {
           </div>
           <div className="container">
             <div className="single-banner">
-              <img src={require("../../images/banner-3.jpg")} alt="" />
+              <img src={require("../../images/banner-1.jpg")} alt="" />
               <div className="inner-text">
                 <h4>Kid’s</h4>
               </div>
@@ -76,15 +56,7 @@ export default function Categories() {
           </div>
           <div className="container">
             <div className="single-banner">
-              <img src={require("../../images/banner-3.jpg")} alt="" />
-              <div className="inner-text">
-                <h4>Kid’s</h4>
-              </div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="single-banner">
-              <img src={require("../../images/banner-3.jpg")} alt="" />
+              <img src={require("../../images/banner-2.jpg")} alt="" />
               <div className="inner-text">
                 <h4>Kid’s</h4>
               </div>

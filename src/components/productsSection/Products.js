@@ -28,14 +28,14 @@ export default function Products() {
 
   return (
     <Container style={{ marginTop: "40px" }}>
-      <Heading>TOWNER</Heading>
+      <Heading>FUSO</Heading>
       <Row>
         {items.map(item => (
           <ProductCard
             key={item.id}
             product={item}
-            lg="3"
-            md="4"
+            lg="6"
+            md="6"
             sm="6"
             xs="6"
           />

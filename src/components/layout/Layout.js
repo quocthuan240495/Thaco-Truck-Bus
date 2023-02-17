@@ -1,26 +1,23 @@
-import React from "react"
+import React, { Fragment } from "react";
 import PropTypes from "prop-types"
 
 import Navbar from "../navbar/Navbar"
 import "./layout.css"
 import Footer from "../footer/Footer"
+import Routers from "../../routers/Routers";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <>
-      <div style={{ overflowX: "hidden" }}>
+      <Fragment>
         <Navbar />
-
-        <main>{children}</main>
-
+        <div>
+          <Routers />
+        </div>
         <Footer />
-      </div>
+    </Fragment>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
