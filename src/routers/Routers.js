@@ -3,13 +3,15 @@ import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import Home from "../components/home/Home";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
+import CarDetail from "../components/carDetail/CarDetail";
 
 const Routers = () => {
     return (
         <BrowserRouter>
-            <Navbar></Navbar>
+            <Navbar />
             <Routes >
                 <Route path="/" element={<Home />} />
+                {/* <Route path="/" element={<CarDetail />} /> */}
             </Routes>
             <Footer></Footer>
         </BrowserRouter>

@@ -1,0 +1,53 @@
+.CarDetail {
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 110px;
+}
+
+.imgHeader {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.containerHeader {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+label {
+    text-align: left;
+}
+
+section {
+    height: 100vh;
+    padding: 3em;
+    color: #fff;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+section:nth-of-type(1) {
+    background: red;
+}
+
+section:nth-of-type(2) {
+    background: green;
+}
+
+section:nth-of-type(3) {
+    background: blue;
+}
+
+.link-area {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.link-area a {
+    display: inline-block;
+    /* margin: 2em 0; */
+    padding: 0 2em;
+    color: #9d8457;
+}

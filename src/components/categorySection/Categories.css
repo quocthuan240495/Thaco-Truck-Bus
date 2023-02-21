@@ -32,7 +32,8 @@
 }
 
 .single-banner img {
-    min-width: 100%;
+    min-width: 50%;
+    height: 50px;
 }
 
 .single-banner .inner-text {

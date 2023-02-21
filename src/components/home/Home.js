@@ -11,7 +11,7 @@ const Home = () => {
     return (
       <>
        {/* <Helmet title="Home"> */}
-        {/* <SEO /> */}
+        <SEO />
         <HomeCarousel />
         <Benefits />,
         <Categories />,
