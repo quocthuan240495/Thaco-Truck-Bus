@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Col } from "reactstrap"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
+import { Link } from "react-router-dom"
 import "lazysizes"
 import "lazysizes/plugins/attrchange/ls.attrchange"
 import "lazysizes/plugins/parent-fit/ls.parent-fit"
@@ -51,33 +52,9 @@ function ProductCard({ product, addToCart, ...props }) {
           <div className="icon like">
             <Like product={product} />
           </div>
-          <ul>
-            <li className="w-icon active">
-              <Link
-                aria-label="add to cart"
-                to="#"
-                onClick={e => {
-                  e.preventDefault()
-                  addToCart(product)
-                }}
-              >
-                <i className="fa fa-shopping-bag"></i>
-              </Link>
-            </li>
-            <li className="quick-view d-md-none">
-              <Link to="#" onClick={onClick}>
-                + View
-              </Link>
-            </li>
-            <li className="w-icon">
-              <Link to="#" aria-label="share">
-                <i className="fa fa-share"></i>
-              </Link>
-            </li>
-          </ul>
         </div>
         <div className="pi-text">
-          <Link to="#" style={{minHeight: "42px"}} className="d-flex align-items-center">
+          <Link to="/detail" style={{minHeight: "42px"}} className="d-flex align-items-center">
             <h5>{product.name}</h5>
           </Link>
           <div className="ratings">

@@ -25,7 +25,7 @@ const NavBar = props => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md" fixed="top">
+      <Navbar light expand="md" fixed="top">
         <Link to="/" className="navbar-brand">
           <div class="row">
             <div class="column">
@@ -39,7 +39,7 @@ const NavBar = props => {
             <NavItem>
               <a className="nav-link" href="tel:+84 944813912">HOTLINE: 0944813912</a>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <Link to="/" className="nav-link">
                 About
               </Link>
@@ -54,10 +54,10 @@ const NavBar = props => {
                 <DropdownItem divider />
                 <DropdownItem>something else</DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> */}
           </Nav>
         </Collapse>
-        <div className="header__cart d-flex ml-auto">
+        {/* <div className="header__cart d-flex ml-auto">
           <Link to="#" className="nav-link" aria-label="view wishlist">
             <i className="fa fa-heart"></i>
             {props.wishlistItems.length > 0 && <span className="number">{props.wishlistItems.length}</span>}
@@ -121,7 +121,7 @@ const NavBar = props => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <NavbarToggler onClick={toggle} />
       </Navbar>
     </div>

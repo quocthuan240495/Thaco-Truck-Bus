@@ -85,7 +85,7 @@ export default function Footer() {
           </Col>
         </Row>
       </Container>
-      <div className="copyright-reserved">
+      {/* <div className="copyright-reserved">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -95,7 +95,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </footer>
   )
 }

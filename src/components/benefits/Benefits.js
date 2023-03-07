@@ -36,7 +36,7 @@ export default function Benefits() {
             </div>
             <div className="sb-text">
               <h6>DỊCH VỤ HẬU MÃI & TRẢ GÓP</h6>
-              <p>Bảo hành dài & hỗ trợ mua xe Isuzu trả góp tới 85% giá trị xe. Thủ tục nhanh, lãi thấp, thanh toán linh hoạt</p>
+              <p>Bảo hành dài & hỗ trợ mua xe trả góp tới 85% giá trị xe. Thủ tục nhanh, lãi thấp, thanh toán linh hoạt</p>
             </div>
           </div>
         </Col>
