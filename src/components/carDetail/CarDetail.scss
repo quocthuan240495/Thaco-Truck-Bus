@@ -52,6 +52,19 @@ section:nth-of-type(3) {
     color: #9d8457;
 }
 
+.accordion-button {
+    background-color: #FFF !important;
+    width: 100%;
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    color: #212529;
+  }
+
 @media all and (max-width: 576px) {
     .link-area a {
         display: none;

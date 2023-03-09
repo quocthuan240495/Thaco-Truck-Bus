@@ -14,6 +14,7 @@ import Stars from "../rating/Stars"
 import { addToCart } from "../../actions/cartActions"
 
 function ProductCard({ product, addToCart, ...props }) {
+  
   const [open, setOpen] = useState(false)
   const [quantity, setQuantity] = useState(1)
 
@@ -37,6 +38,7 @@ function ProductCard({ product, addToCart, ...props }) {
     e && e.preventDefault()
     setOpen(prevState => !prevState)
   }
+  console.log("product", product)
 
   return (
     <Col {...props}>
@@ -54,7 +56,7 @@ function ProductCard({ product, addToCart, ...props }) {
           </div>
         </div>
         <div className="pi-text">
-          <Link to="/detail" style={{minHeight: "42px"}} className="d-flex align-items-center">
+          <Link to={`/detail/${product.nameLink}`} style={{minHeight: "42px"}} className="d-flex align-items-center">
             <h5>{product.name}</h5>
           </Link>
           <div className="ratings">

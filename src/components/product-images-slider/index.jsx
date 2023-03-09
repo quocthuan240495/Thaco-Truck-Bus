@@ -1,7 +1,7 @@
 import './product-image-slider.scss'
 import PropTypes from 'prop-types'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Thumbs } from 'swiper'
+import { Navigation, Thumbs, Autoplay, Pagination } from 'swiper'
 import React, { useState } from 'react'
 
 const ProductImagesSlider = props => {
@@ -12,10 +12,18 @@ const ProductImagesSlider = props => {
             loop={true}
             spaceBetween={1}
             navigation={true}
-            modules={[Navigation, Thumbs]}
+            modules={[Navigation, Thumbs, Autoplay, Pagination]}
             grabCursor={true}
             thumbs={{ swiper: activeThumb }}
-            className='product-images-slider'
+            centeredSlides={true}
+            autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            }}
+            pagination={{
+            clickable: true,
+            }}
+            className="mySwiper"
         >
             {
                 props.images.map((item, index) => (

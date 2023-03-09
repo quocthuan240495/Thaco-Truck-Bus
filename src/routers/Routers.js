@@ -10,8 +10,9 @@ const Routers = () => {
         <BrowserRouter>
             <Navbar />
             <Routes >
-                <Route path="/" element={<Home />} />
-                <Route path="/detail" element={<CarDetail />} />
+                <Route path="/" element={<Navigate to="/home" />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/detail/:slug" element={<CarDetail />} />
             </Routes>
             <Footer></Footer>
         </BrowserRouter>

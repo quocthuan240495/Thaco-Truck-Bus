@@ -1,29 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./CarDetail.scss";
-import { Row } from "reactstrap";
-import Label from "reactstrap/lib/Label";
+import {
+  Row,
+  Label,
+  Accordion,
+  AccordionBody,
+  AccordionHeader,
+  AccordionItem,
+} from "reactstrap";
 import ProductImagesSlider from "../product-images-slider";
-import { productImages } from "../../images/productDetail"
+import { useParams } from "react-router-dom";
+import { items } from "../../data";
 
 import 'swiper/swiper.min.css'
 import 'swiper/modules/pagination/pagination.min.css'
 
-function Header() {
+function Header(dataHeader) {
   useEffect(() => {
     let url = window.location.href.split("/");
     let target = url[url.length - 1].toLowerCase();
     let element = document.getElementById(target);
     element && element.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, []);
+    console.log("aaaaa", dataHeader.dataHeader)
+  }, [dataHeader]);
+
   return (
     <>
-      <img src={require("../../images/products/banner_THACOTAI_FUSO_CANTERTF49_tc4_KOHOTLINE.jpeg")} alt="" />
+      <img src={dataHeader.dataHeader.srcImg} alt="" />
       <Row className="containerHeader">
         <Row className="imgHeader">
           <img src={require("../../images/icons/TF49.png")} alt="" />
         </Row>
-        <Label>Mitsubishi Fuso Canter TF4.9 (tải trọng 1.995 tấn) là dòng xe tải trung cao cấp hoàn toàn mới từ Mitsubishi Nhật Bản, được Thaco sản xuất lắp ráp và phân phối độc quyền tại Việt Nam. Mitsubishi Fuso Canter TF4.9 sở hữu các tính năng công nghệ nổi bật nhất trong phân khúc: động cơ Mitsubishi Fuso đạt tiêu chuẩn khí thải Euro 5, hệ thống chống bó cứng phanh ABS và hệ thống phân bổ lực phanh điện tử EBD.</Label>
-        <Label>Mitsubishi Fuso Canter TF4.9 linh hoạt đáp ứng nhu cầu chuyên chở của khách hàng với đa dạng thùng tải: Thùng tải lửng, Thùng mui bạt, Thùng tải kín, Thùng đông lạnh, Thùng bán hàng lưu động…</Label>
+        <Label>{dataHeader.dataHeader.lableHeader1}</Label>
+        <Label>{dataHeader.dataHeader.lableHeader2}</Label>
         <Row className="link-area">
           <a
             href="/"
@@ -99,70 +108,103 @@ function Header() {
   );
 }
 
-function Ngoaithat() {
+function Ngoaithat(dataHeader) {
   return (
     <section id="ngoaithat">
       <h1>NGOẠI THẤT</h1>
-      <ProductImagesSlider images={productImages} />
+      <ProductImagesSlider images={dataHeader.dataHeader.detail.imgDetail1} />
     </section>
   );
 }
 
-function Noithat() {
+function Noithat(dataHeader) {
   return (
     <section id="noithat">
       <h1>NỘI THẤT</h1>
-      <ProductImagesSlider images={productImages} />
+      <ProductImagesSlider images={dataHeader.dataHeader.detail.imgDetail2} />
     </section>
   );
 }
 
-function Thungxe() {
+function Thungxe(dataHeader) {
   return (
     <section id="thungxe">
       <h1>THÙNG XE</h1>
-      <ProductImagesSlider images={productImages} />
+      <ProductImagesSlider images={dataHeader.dataHeader.detail.imgDetail3} />
     </section>
   );
 }
 
-function Khunggam() {
+function Khunggam(dataHeader) {
   return (
     <section id="khunggam">
       <h1>KHUNG GẦM</h1>
-      <ProductImagesSlider images={productImages} />
+      <ProductImagesSlider images={dataHeader.dataHeader.detail.imgDetail4} />
     </section>
   );
 }
 
-function Dongco() {
+function Dongco(dataHeader) {
   return (
     <section id="dongco">
       <h1>ĐỘNG CƠ</h1>
-      <ProductImagesSlider images={productImages} />
+      <ProductImagesSlider images={dataHeader.dataHeader.detail.imgDetail5} />
     </section>
   );
 }
 
-function Thongsokythuat() {
+function Thongsokythuat(dataHeader) {
+
+  const [open, setOpen] = useState('1');
+  const toggle = (id) => {
+    if (open === id) {
+      setOpen();
+    } else {
+      setOpen(id);
+    }
+  };
+
   return (
     <section id="thongsokythuat">
       <h1>THÔNG SỐ KỸ THUẬT</h1>
-      <ProductImagesSlider images={productImages} />
+      <div>
+        <Accordion flush open={open} toggle={toggle}>
+          {/* {dataHeader?.dataHeader?.detail?.technicalInfo?.map((item, index) => ( */}
+            <AccordionItem>
+              <AccordionHeader targetId="1">{item.headerTitle}</AccordionHeader>
+              <AccordionBody accordionId="1">
+                <strong>This is the first item&#39;s accordion body.</strong>
+                You can modify any of this with custom CSS or overriding our default
+                variables. It&#39;s also worth noting that just about any HTML can
+                go within the <code>.accordion-body</code>, though the transition
+                does limit overflow.
+              </AccordionBody>
+            </AccordionItem>
+          {/* ))} */}
+        </Accordion>
+      </div>
     </section>
   );
 }
 
 export default function CarDetail() {
+
+  const { slug } = useParams();
+  const singleCarItem = items.find((item) => item.nameLink === slug);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [singleCarItem]);
+
   return (
     <div className="CarDetail">
-      <Header />
-      <Ngoaithat />
-      <Noithat />
-      <Thungxe />
-      <Khunggam />
-      <Dongco />
-      <Thongsokythuat />
+      <Header dataHeader={singleCarItem} />
+      <Ngoaithat dataHeader={singleCarItem} />
+      <Noithat dataHeader={singleCarItem} />
+      <Thungxe dataHeader={singleCarItem} />
+      <Khunggam dataHeader={singleCarItem} />
+      <Dongco dataHeader={singleCarItem} />
+      <Thongsokythuat dataHeader={singleCarItem} />
     </div>
   );
 }
